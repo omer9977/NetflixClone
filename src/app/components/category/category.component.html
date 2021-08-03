@@ -1,0 +1,45 @@
+
+
+<section id="iq-favorites">
+  <div class="container-fluid">
+    <div class="dropdown show">
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#" *ngFor="let c of categories">{{
+          c.name
+        }}</a>
+      </div>
+    </div>
+    <br /><br /><br /><br /><br /><br />
+    <div class="row">
+      <div class="col-sm-12 overflow-hidden">
+        <div
+          class="
+            iq-main-header
+            d-flex
+            align-items-center
+            justify-content-between
+          "
+        >
+          <h4 class="main-title">Kategoriler</h4>
+        </div>
+        <div class="favorites-contens">
+          <ul class="favorites-slider list-inline row p-0 mb-0">
+            <li routerLink="/movies/{{c.id}}" class="slide-item" *ngFor="let c of categories">
+              <div class="block-images position-relative">
+                <div class="img-box">
+                  <img src="{{ c.pictureUrl }}" class="img-fluid" alt="" />
+                </div>
+                <div class="block-description">
+                  <h6 class="iq-title">
+                    <a>{{ c.name }}</a>
+                  </h6>
+                </div>
+              </div>
+              <br />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

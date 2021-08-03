@@ -1,0 +1,91 @@
+<section id="iq-favorites">
+   
+    <div class="container-fluid">
+      <!-- <div class="dropdown show">
+         <a class="btn btn-secondary dropdown-toggle btn-hover iq-button" style="width: 150px;background-color:rgb(165, 14, 14)" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          
+            Kategoriler
+         </a>
+       
+         <div class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+           <a class="dropdown-item" href="#" *ngFor="let c of categories">{{c.name}}</a>
+         </div>
+       </div> -->
+       <br/><br/><br/><br/><br/><br/>
+       <div class="row">
+          <div class="col-sm-12 overflow-hidden">
+             <div class="iq-main-header d-flex align-items-center justify-content-between">
+                <h4 class="main-title">Tüm Filmler</h4>              
+             </div>
+             <div class="favorites-contens">
+                <ul class="favorites-slider list-inline row p-0 mb-0">
+                   <li class="slide-item" *ngFor="let m of movies | filterPipe: filterText">
+                      
+                         <div class="block-images position-relative">
+                            <div class="img-box">
+                               <img src="{{m.pictureUrl}}" class="img-fluid" alt="">
+                            </div>
+                            <div class="block-description">
+                               <h6 class="iq-title"><a href="movie-details.html">{{m.name}}</a></h6>
+                               <div class="movie-time d-flex align-items-center my-2">
+                                  <div class="badge badge-secondary p-1 mr-2">{{m.rated}}</div>
+                                  <span class="text-white">{{m.duration}}</span>
+                               </div>
+                               <div routerLink="/movie-play/{{m.id}}" class="hover-buttons">
+                                  <span class="btn btn-hover iq-button">
+                                  <i class="fa fa-play mr-1" aria-hidden="true"></i>
+                                  Oynat
+                                  </span>
+                               </div>
+                            </div>
+ 
+                            <div class="block-social-info">
+                                <ul class="list-inline p-0 m-0 music-play-lists">
+                                   <li class="share">
+                                      <span><i class="ri-share-fill"></i></span>
+                                      <div class="share-box">
+                                         <div class="d-flex align-items-center">
+                                             </div>
+                                      </div>
+                                   </li>  <li>
+                                       <span><i class="ri-heart-fill"></i></span>
+                                    </li>
+                                </ul>
+                             </div>
+                         </div>
+                         <br/>
+                   </li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ <div class="form-group position-relative">
+   <input
+     #focus
+     [(ngModel)]="filterText"
+     type="text"
+     class="text search-input font-size-12"
+     placeholder="Aradığınız filmi yazınız..."
+     maxlength="80"
+     value=""
+     class=""
+     style="opacity: 1; transition-duration: 300ms"
+     dir="ltr"
+   />
+ </div>
+ <table *ngIf="filterText" class="table">
+   <thead>
+     <tr>
+       <th scope="col">Movie</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let m of movies | filterPipe: filterText">
+       <td>{{m.name}}</td>
+     </tr>
+   </tbody>
+ </table>
+
+ <!-- <button (click)="filter()"></button> -->

@@ -1,0 +1,174 @@
+.iq-user-dropdown.search-toggle {
+    margin: 15px 0;
+  }
+
+  .iqonic-user-forms .links a>h6 {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+  }
+  
+  .iq-usermenu-dropdown .iq-sub-dropdown .iq-card-body .right-icon i {
+    color: var(--iq-primary);
+    padding: 0;
+}
+
+
+
+.iq-usermenu-dropdown .iq-sub-dropdown .iq-card-body div {
+    border-radius: 0;
+    text-align: left;
+}
+  .iqonic-user-forms .links a:hover>h6 {
+    border-color: var(--iq-primary);
+  }
+
+  .avatar-40 {
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    line-height: 40px;
+    font-size: 0.6rem;
+}
+
+.iq-usermenu-dropdown .iq-sub-dropdown .iq-card-body .right-icon i {
+    color: var(--iq-primary);
+    padding: 0;
+}
+
+a {
+    color: var(--iq-primary);
+    outline: none;
+  }
+  
+  a:focus, a:hover {
+    color: var(--iq-primary);
+    outline: none;
+  }
+  
+
+.rounded-circle {
+    border-radius: 50%!important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+.navbar ul li a {
+    position: relative;
+    color: var(--iq-body-text);
+    padding: 0px 0px 0px 0.938em;
+    line-height: 4.375em;
+    position: relative;
+    z-index: 9;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    text-transform: capitalize;
+}
+
+.navbar ul li a, .navbar ul li.menu-item a {
+    font-size: 18px;
+    padding: 15px;
+    z-index: inherit;
+    text-align: left;
+    font-weight: normal;
+}
+
+.navbar ul li i {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 15px;
+    line-height: 28px;
+    font-size: 20px;
+    z-index: 9;
+    color: var(--iq-white-color);
+    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+header .navbar ul li i {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.125em;
+    color: var(--iq-body-text);
+    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.fa, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.fa, .fas {
+    font-weight: 900;
+}
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

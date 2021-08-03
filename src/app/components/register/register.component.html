@@ -1,0 +1,35 @@
+
+  <body>
+    <form [formGroup]="registerForm" class="form-signin">
+    <!-- partial:index.partial.html -->
+    <!-- <a class="logo" href="https://www.netflix.com/" target="_blank"><img src="https://bit.ly/2VdIFUK"/></a> -->
+    <div class="login">
+      <div *ngIf="invalidLogin" class="alert alert-danger">
+        Geçersiz Kullanıcı Adı veya Parola
+      </div>
+      <div *ngIf="registered" class="alert alert-success">
+        Email adresinize doğrulama linki gönderildi. Adresinize gönderilen linke tıklayarak doğrulama yapabilirsiniz. İyi Seyirler...
+      </div>
+      <h1 class="login__title">Giriş Yap</h1>
+      <div class="login__group">
+        <input formControlName="username" name="username" class="login__group__input" type="text" required="true"/>
+        <label class="login__group__label">Kullanıcı Adı</label>
+      </div>
+      <div class="login__group">
+        <input formControlName="email" name="email" class="login__group__input" type="text" required="true"/>
+        <label class="login__group__label">Email</label>
+      </div>
+      <div class="login__group">
+        <input formControlName="password" name="password" class="login__group__input" type="password" required="true"/>
+        <label class="login__group__label">Parola</label>
+      </div>
+      <div class="login__group">
+        <input formControlName="confirmPassword" name="confirmPassword" class="login__group__input" type="password" required="true"/>
+        <label class="login__group__label">Parola Tekrar</label>
+      </div>
+      <button class="login__sign-in" (click)="register()">Kayıt Ol</button>
+      <div class="login__secondary-cta"><a class="login__secondary-cta__text" routerLink="/createPassword">Parolamı Unuttum</a>
+        <a type="button" class="login__secondary-cta__text login__secondary-cta__text--need-help">Yardım</a></div>
+    </div>
+  </form>
+  </body>

@@ -1,0 +1,48 @@
+<!-- 
+<form [formGroup]="loginForm" class="form-signin">
+    <8!-- (ngSubmit)="login(loginForm)" #loginForm="ngForm"               --8>
+  <div class="container-fluid">
+    <h2 class="form-signin-heading">Login</h2>
+    <div *ngIf="invalidLogin" class="alert alert-danger">
+      Geçersiz Kullanıcı Adı veya Parola
+    </div>
+    <div *ngIf="confirmed" class="alert alert-danger">
+      Sitemize Hoşgeldiniz. Artık Giriş Yapabilirsiniz.
+    </div>
+    <br>
+    <input formControlName="username" type="text" id="username" name="username" ngModel class="form-control" placeholder="User Name" required autofocus>
+
+    <input formControlName="password" type="password" id="password" name="password" ngModel class="form-control" placeholder="Password" required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login()">Giriş Yap</button>
+  </div>
+</form>
+
+<button class="btn btn-lg btn-primary btn-block" type="button" (click)="logout()">Çıkış Yap</button>
+<button class="btn btn-lg btn-primary btn-block" type="button" routerLink="/createPassword">Parolamı Unuttum</button> -->
+
+<body>
+  <form [formGroup]="loginForm" class="form-signin">
+  <!-- partial:index.partial.html -->
+  <!-- <a class="logo" href="https://www.netflix.com/" target="_blank"><img src="https://bit.ly/2VdIFUK"/></a> -->
+  <div class="login">
+    <div *ngIf="invalidLogin" class="alert alert-danger">
+      Geçersiz Kullanıcı Adı veya Parola
+    </div>
+    <div *ngIf="confirmed" class="alert alert-danger">
+      Sitemize Hoşgeldiniz. Artık Giriş Yapabilirsiniz.
+    </div>
+    <h1 class="login__title">Giriş Yap</h1>
+    <div class="login__group">
+      <input formControlName="username" name="username" class="login__group__input" type="text" required="true"/>
+      <label class="login__group__label">Kullanıcı Adı</label>
+    </div>
+    <div class="login__group">
+      <input formControlName="password" name="password" class="login__group__input" type="password" required="true"/>
+      <label class="login__group__label">Parola</label>
+    </div>
+    <button class="login__sign-in" type="submit" (click)="login()">Giriş Yap</button>
+    <div class="login__secondary-cta"><a class="login__secondary-cta__text" href="#">Parolamı Unuttum</a><a class="login__secondary-cta__text login__secondary-cta__text--need-help" href="#">Yardım</a></div>
+  </div>
+</form>
+</body>

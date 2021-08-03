@@ -1,0 +1,286 @@
+<header id="main-header">
+  <div class="main-header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <nav class="navbar navbar-expand-lg navbar-light p-0">
+            <a
+              routerLink=""
+              class="navbar-toggler c-toggler"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <div class="navbar-toggler-icon" data-toggle="collapse">
+                <span class="navbar-menu-icon navbar-menu-icon--top"></span>
+                <span class="navbar-menu-icon navbar-menu-icon--middle"></span>
+                <span class="navbar-menu-icon navbar-menu-icon--bottom"></span>
+              </div>
+            </a>
+            <a class="navbar-brand" routerLink="">
+              <img
+                class="img-fluid logo"
+                src="/assets/images/logo.png"
+                alt="NetMovie"
+                style="height: 100px;width: 50px;"
+              />
+            </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="menu-main-menu-container">
+                <ul id="top-menu" class="navbar-nav ml-auto">
+                  <li class="menu-item">
+                    <a routerLink="">ANA SAYFA</a>
+                  </li>
+                  <li class="menu-item">
+                    <a routerLink="/movies">FİLMLER</a>
+                  </li>
+                  <li class="menu-item">
+                    <a routerLink="/shows">DİZİLER</a>
+                  </li>
+                  <li class="menu-item">
+                    <a routerLink="/category">KATEGORİLER</a>
+                  </li>
+                  <li class="menu-item">
+                    <a routerLink="/watchlist">İZLEME LİSTEM</a>
+                  </li>
+                  <li class="menu-item">
+                    <a routerLink="/contact">İLETİŞİM</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="navbar-right menu-right">
+              <ul class="d-flex align-items-center list-inline m-0">
+                <li class="nav-item nav-icon">
+                  <a
+                    *ngIf="hidden"
+                    (click)="hideandshow()"
+                    class="search-toggle device-search active"
+                  >
+                    <i class="ri-search-line"></i>
+                  </a>
+                  <div *ngIf="!hidden" class="form-group position-relative">
+                    <input
+                      #focus
+                      [(ngModel)]="filterText"
+                      (ngModelChange)="filter($event)"
+                      (blur)="onBlur()"
+                      type="text"
+                      class="text search-input font-size-12"
+                      placeholder="Aradığınız filmi yazınız..."
+                      maxlength="80"
+                      value=""
+                      class=""
+                      style="opacity: 1; transition-duration: 300ms"
+                      dir="ltr"
+                    />
+                  </div>
+
+                  <!-- vsd mcc k -->
+                </li>
+                <li class="nav-item nav-icon">
+                  <a href="#" class="search-toggle" data-toggle="search-toggle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                      class="noti-svg"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path
+                        d="M18 10a6 6 0 1 0-12 0v8h12v-8zm2 8.667l.4.533a.5.5 0 0 1-.4.8H4a.5.5 0 0 1-.4-.8l.4-.533V10a8 8 0 1 1 16 0v8.667zM9.5 21h5a2.5 2.5 0 1 1-5 0z"
+                      />
+                    </svg>
+                    <span class="bg-danger dots"></span>
+                  </a>
+                  <div *ngIf="filterText" class="iq-sub-dropdown">
+                    <div class="iq-card shadow-none m-0">
+                      <div class="iq-card-body">
+                        <a
+                          class="iq-sub-card"
+                          routerLink="/movie-play/{{ m.id }}"
+                          *ngFor="let m of movies | filterPipe: filterText"
+                        >
+                          <div class="media align-items-center">
+                            <img
+                              style="width: 80px; height: 45px"
+                              src="{{ m.pictureUrl }}"
+                              class="img-fluid mr-3"
+                            />
+                            <div class="media-body" style="margin-left: 10px">
+                              <h6 class="mb-0">{{ m.name }}</h6>
+                              <small class="font-size-12"> Şimdi Oynat</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li *ngIf="!isAuthanticated" routerLink="/register" class="nav-item nav-icon">
+                      <span class="btn btn-hover">
+                        Kayıt Ol
+                      </span>
+                  <!-- <div class="iq-sub-dropdown iq-user-dropdown">
+                    <div class="iq-card shadow-none m-0">
+                      <div class="iq-card-body p-0 pl-3 pr-3">
+                        <a
+                          href="manage-profile.html"
+                          class="iq-sub-card setting-dropdown"
+                        >
+                          <div class="media align-items-center">
+                            <div class="right-icon">
+                              <i class="ri-file-user-line text-primary"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                              <h6 class="my-0">Manage Profile</h6>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          href="setting.html"
+                          class="iq-sub-card setting-dropdown"
+                        >
+                          <div class="media align-items-center">
+                            <div class="right-icon">
+                              <i class="ri-settings-4-line text-primary"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                              <h6 class="my-0">Settings</h6>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          href="pricing-plan.html"
+                          class="iq-sub-card setting-dropdown"
+                        >
+                          <div class="media align-items-center">
+                            <div class="right-icon">
+                              <i class="ri-settings-4-line text-primary"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                              <h6 class="my-0">Pricing Plan</h6>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          href="login.html"
+                          class="iq-sub-card setting-dropdown"
+                        >
+                          <div class="media align-items-center">
+                            <div class="right-icon">
+                              <i class="ri-logout-circle-line text-primary"></i>
+                            </div>
+                            <div class="media-body ml-3">
+                              <h6 class="my-0">Logout</h6>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div> -->
+                 
+                </li>
+                <li *ngIf="!isAuthanticated" routerLink="/login" class="nav-item nav-icon">
+                  <span class="btn btn-hover">
+                    Giriş Yap
+                  </span>
+             
+            </li>
+            <li (click)="logout()" *ngIf="isAuthanticated" class="nav-item nav-icon">
+              <span class="btn btn-hover">
+                Çıkış Yap
+              </span>
+         
+        </li>
+                <!-- <li class="nav-item nav-icon header-user-rights">
+                  <a
+                    href="#"
+                    class="
+                      iq-user-dropdown
+                      search-toggle
+                      p-0
+                      d-flex
+                      align-items-center
+                      active
+                    "
+                    data-toggle="search-toggle"
+                    id="btn-user-list"
+                  >
+                    <img
+                      src="https://iqonic.design/wp-themes/streamit_wp/wp-content/themes/streamit/assets/images/user.png"
+                      class="img-fluid avatar-40 rounded-circle"
+                      alt="user"
+                    />
+                  </a>
+
+                  <div class="iq-sub-dropdown iq-user-dropdown">
+                    <div class="iq-card shadow-none m-0">
+                      <div class="iq-card-body p-0 pl-3 pr-3">
+                        <a
+                          href="https://iqonic.design/wp-themes/streamit_wp/login/"
+                          class="iq-sub-card setting-dropdown"
+                        >
+                          <div class="media align-items-center">
+                            <div class="right-icon">
+                              <i class="fa fa-sign-in"></i>
+                            </div>
+
+                            <div class="media-body ml-3">
+                              <h6 class="m-0">Login</h6>
+                            </div>
+                          </div>
+                        </a>
+                        <a
+                          href="https://iqonic.design/wp-themes/streamit_wp/register/"
+                          class="iq-sub-card setting-dropdown"
+                        >
+                          <div class="media align-items-center">
+                            <div class="right-icon">
+                              <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+
+                            <div class="media-body ml-3">
+                              <h6 class="m-0">Register</h6>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li> -->
+              </ul>
+              <!-- <div *ngIf="filterText" class="iq-sub-dropdown">
+                <div class="iq-card shadow-none m-0">
+                  <div class="iq-card-body">
+                    <a
+                      class="iq-sub-card"
+                      routerLink="/movie-play/{{ m.id }}"
+                      *ngFor="let m of movies | filterPipe: filterText"
+                    >
+                      <div class="media align-items-center">
+                        <img
+                          style="width: 80px; height: 45px"
+                          src="{{ m.pictureUrl }}"
+                          class="img-fluid mr-3"
+                        />
+                        <div class="media-body" style="margin-left: 10px">
+                          <h6 class="mb-0">{{ m.name }}</h6>
+                          <small class="font-size-12"> Şimdi Oynat</small>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </nav>
+          <div class="nav-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

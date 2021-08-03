@@ -1,0 +1,45 @@
+.slick-slider {
+    width: 88%;
+    margin: auto;
+    background: rgb(14, 13, 13);
+  }
+  
+body .slick-prev, 
+body .slick-next {
+    height: 45px;
+    width: 40px;
+    background: grey !important;
+    z-index: 100;
+}
+
+.iq-sub-dropdown .iq-card-body div {
+  border-radius: 0;
+}
+
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+
+.media {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.iq-sub-dropdown .iq-sub-card {
+  position: relative;
+  font-size: inherit;
+  padding: 15px 15px;
+  line-height: normal;
+  color: inherit;
+  text-align: left;
+  display: list-item;
+  width: 20%;
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 0 0 1px 0;
+  border-image-source: linear-gradient(to right, rgba(209, 208, 207, 0.6), rgba(209, 208, 207, 0.3), rgba(209, 208, 207, 0));
+}
+
